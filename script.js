@@ -54,26 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- NEW: Hero Section Slideshow Logic ---
+    // --- Hero Section Slideshow Logic ---
     const slides = document.querySelectorAll('.slide');
     if (slides.length > 0) {
         let currentSlideIndex = 0;
         const slideInterval = 5000; // 5 seconds
 
         function showNextSlide() {
-            // Hide the current slide
             slides[currentSlideIndex].classList.remove('active');
-
-            // Determine the next slide, looping back to the start
             currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-
-            // Show the next slide
             slides[currentSlideIndex].classList.add('active');
         }
 
-        // Start the slideshow
         setInterval(showNextSlide, slideInterval);
     }
-    
-    // The rest of your scripts like Intersection Observer can go here if needed
+
 });
