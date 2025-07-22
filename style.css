@@ -30,7 +30,7 @@ header {
 }
 
 nav.container {
-    background: linear-gradient(135deg, #D49A2D 0%, #E5A632 100%);
+    background: linear-gradient(135deg, #d49a2d00 0%, #e5a6322b 100%)
     color: white;
     display: flex;
     justify-content: space-between;
