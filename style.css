@@ -115,7 +115,7 @@ nav.container {
     margin-bottom: 2rem;
     opacity: 0.9;
     color: #D4AF37;
-    text-transform: uppercase;
+    text-transform: none;
     animation: fadeInUp 1s ease 0.3s both;
 }
 
