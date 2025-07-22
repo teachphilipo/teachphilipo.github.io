@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
+/* Enhanced readability with darker base text color */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    /* Add padding to the top of the body to prevent content from being hidden behind the fixed header */
+    color: #333; /* Darker text for better contrast */
     padding-top: 120px; 
 }
 
@@ -18,9 +18,9 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* --- HEADER (Unchanged as requested) --- */
 header {
-    background: transparent; /* Header is now a transparent container */
+    background: transparent;
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -36,7 +36,7 @@ nav.container {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 2rem;
-    border-radius: 50px; /* This creates the pill shape */
+    border-radius: 50px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
@@ -47,14 +47,14 @@ nav.container {
 }
 
 .logo-svg {
-    width: 110px; /* Slightly adjusted for the new layout */
+    width: 110px;
     height: 70px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem; /* Adjusted gap */
+    gap: 1.5rem;
 }
 
 .nav-links a {
@@ -76,6 +76,8 @@ nav.container {
     font-size: 1.5rem;
     cursor: pointer;
 }
+/* --- END HEADER --- */
+
 
 /* Hero Section */
 .hero {
@@ -88,7 +90,7 @@ nav.container {
     align-items: center;
     text-align: center;
     color: white;
-    margin-top: -120px; /* Pull the hero section up to fill the space left by the body padding-top */
+    margin-top: -120px;
 }
 
 .hero-content h1 {
@@ -135,16 +137,17 @@ nav.container {
     text-align: center;
 }
 
+/* Unified primary button style for high visibility */
 .btn-primary {
-    background: white;
-    color: #6D4C41;
-    box-shadow: 0 4px 15px rgba(0,0,0, 0.2);
+    background: #E5A632;
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 166, 50, 0.4);
 }
 
 .btn-primary:hover {
-    background: #FFF8E1;
+    background: #D49A2D;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0, 0.3);
+    box-shadow: 0 6px 20px rgba(229, 166, 50, 0.6);
 }
 
 .btn-secondary {
@@ -168,14 +171,14 @@ section {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #6D4C41; /* Dark Brown */
+    color: #6D4C41; /* Warm dark brown for headings */
 }
 
 .section-subtitle {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 3rem;
-    color: #666;
+    color: #555; /* Darker grey for subtitles */
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -194,7 +197,7 @@ section {
 }
 
 .about-content h3 {
-    color: #6D4C41; /* Dark Brown */
+    color: #6D4C41;
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
@@ -228,11 +231,11 @@ section {
 .stat-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #E5A632; /* Primary Orange */
+    color: #E5A632;
 }
 
 .stat-label {
-    color: #666;
+    color: #555; /* Darker grey for readability */
     margin-top: 0.5rem;
 }
 
@@ -258,16 +261,17 @@ section {
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
+/* Refined accent colors for a more cohesive palette */
 .program-card:nth-child(1) {
     border-top-color: #E5A632; /* Primary Orange */
 }
 
 .program-card:nth-child(2) {
-    border-top-color: #00796B; /* Dark Teal */
+    border-top-color: #3A506B; /* Complementary Slate Blue */
 }
 
 .program-card:nth-child(3) {
-    border-top-color: #5D4037; /* Darker Brown */
+    border-top-color: #6D4C41; /* Heading Brown for consistency */
 }
 
 .program-icon {
@@ -276,13 +280,12 @@ section {
 }
 
 .program-card h3 {
-    color: #6D4C41; /* Dark Brown */
+    color: #6D4C41;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .program-card p {
-    color: #666;
     line-height: 1.6;
 }
 
@@ -294,6 +297,7 @@ section {
 
 .impact .section-title, .impact .section-subtitle {
     color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .impact-grid {
@@ -327,7 +331,7 @@ section {
 
 /* Contact Section */
 .contact {
-    background: #FFF8E1; /* Light warm off-white */
+    background: #FFF8E1;
 }
 .contact-grid {
     display: grid;
@@ -337,9 +341,10 @@ section {
 }
 
 .contact-info {
-    background: #F8F9FA;
+    background: white;
     padding: 2rem;
     border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .contact-item {
@@ -352,7 +357,7 @@ section {
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: #E5A632; /* Primary Orange */
+    background: #E5A632;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -375,7 +380,7 @@ section {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #6D4C41; /* Dark Brown */
+    color: #6D4C41;
     font-weight: 600;
 }
 
@@ -387,28 +392,18 @@ section {
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    color: #333; /* Ensure input text is dark */
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #E5A632; /* Primary Orange */
+    border-color: #E5A632;
 }
-
-.contact-form .btn-primary {
-    background: #E5A632;
-    color: white;
-    box-shadow: 0 4px 15px rgba(229, 166, 50, 0.4);
-}
-.contact-form .btn-primary:hover {
-    background: #D49A2D;
-    box-shadow: 0 6px 20px rgba(229, 166, 50, 0.6);
-}
-
 
 /* Footer */
 footer {
-    background: #4A3F35; /* Darker brown for solid base */
+    background: #4A3F35; /* Dark brown for solid base */
     color: white;
     text-align: center;
     padding: 2rem 0;
@@ -429,10 +424,10 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        padding-top: 100px; /* Adjust body padding for smaller header */
+        padding-top: 100px;
     }
     .hero {
-        margin-top: -100px; /* Adjust hero margin */
+        margin-top: -100px;
     }
     nav.container {
         padding: 0.5rem 1rem;
@@ -440,15 +435,15 @@ footer {
     .nav-links {
         display: none;
         position: absolute;
-        top: calc(100% + 10px); /* Position dropdown below the header */
-        left: 5%; /* Center the dropdown menu */
+        top: calc(100% + 10px);
+        left: 5%;
         right: 5%;
         width: 90%;
         background: linear-gradient(135deg, #D49A2D 0%, #E5A632 100%);
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        border-radius: 20px; /* Rounded corners for the dropdown */
+        border-radius: 20px;
     }
 
     .nav-links.active {
