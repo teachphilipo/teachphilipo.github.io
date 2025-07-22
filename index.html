@@ -27,7 +27,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
+            background: linear-gradient(135deg, #D49A2D 0%, #E5A632 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -36,6 +36,7 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: background 0.3s ease;
         }
 
         nav {
@@ -82,8 +83,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(102, 187, 106, 0.8)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%234CAF50" width="1000" height="600"/><circle fill="%232E7D32" cx="200" cy="150" r="80"/><circle fill="%238BC34A" cx="800" cy="200" r="60"/><circle fill="%23689F38" cx="600" cy="400" r="100"/><polygon fill="%23558B2F" points="100,500 200,300 300,500"/><polygon fill="%23689F38" points="700,550 850,350 950,550"/></svg>');
+            background: linear-gradient(rgba(229, 166, 50, 0.8), rgba(245, 183, 74, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23E5A632" width="1000" height="600"/><circle fill="%23D49A2D" cx="200" cy="150" r="80"/><circle fill="%23F5B74A" cx="800" cy="200" r="60"/><circle fill="%23C8922A" cx="600" cy="400" r="100"/><polygon fill="%23AF7A24" points="100,500 200,300 300,500"/><polygon fill="%23C8922A" points="700,550 850,350 950,550"/></svg>');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -138,15 +139,15 @@
         }
 
         .btn-primary {
-            background: #FF7043;
-            color: white;
-            box-shadow: 0 4px 15px rgba(255, 112, 67, 0.4);
+            background: white;
+            color: #6D4C41;
+            box-shadow: 0 4px 15px rgba(0,0,0, 0.2);
         }
 
         .btn-primary:hover {
-            background: #F4511E;
+            background: #FFF8E1;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 112, 67, 0.6);
+            box-shadow: 0 6px 20px rgba(0,0,0, 0.3);
         }
 
         .btn-secondary {
@@ -157,7 +158,7 @@
 
         .btn-secondary:hover {
             background: white;
-            color: #2E7D32;
+            color: #D49A2D;
             transform: translateY(-3px);
         }
 
@@ -170,7 +171,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2E7D32;
+            color: #6D4C41; /* Dark Brown */
         }
 
         .section-subtitle {
@@ -185,7 +186,7 @@
 
         /* About Section */
         .about {
-            background: #F8F9FA;
+            background: #FFF8E1; /* Light warm off-white */
         }
 
         .about-grid {
@@ -196,7 +197,7 @@
         }
 
         .about-content h3 {
-            color: #2E7D32;
+            color: #6D4C41; /* Dark Brown */
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
@@ -219,7 +220,7 @@
             padding: 2rem;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
 
@@ -230,7 +231,7 @@
         .stat-number {
             font-size: 3rem;
             font-weight: bold;
-            color: #4CAF50;
+            color: #E5A632; /* Primary Orange */
         }
 
         .stat-label {
@@ -250,26 +251,26 @@
             background: white;
             border-radius: 15px;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border-top: 4px solid transparent;
         }
 
         .program-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
 
         .program-card:nth-child(1) {
-            border-top-color: #4CAF50;
+            border-top-color: #E5A632; /* Primary Orange */
         }
 
         .program-card:nth-child(2) {
-            border-top-color: #2196F3;
+            border-top-color: #00796B; /* Dark Teal */
         }
 
         .program-card:nth-child(3) {
-            border-top-color: #FF9800;
+            border-top-color: #5D4037; /* Darker Brown */
         }
 
         .program-icon {
@@ -278,7 +279,7 @@
         }
 
         .program-card h3 {
-            color: #2E7D32;
+            color: #6D4C41; /* Dark Brown */
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -290,7 +291,11 @@
 
         /* Impact Section */
         .impact {
-            background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
+            background: linear-gradient(135deg, #D49A2D 0%, #E5A632 100%);
+            color: white;
+        }
+
+        .impact .section-title, .impact .section-subtitle {
             color: white;
         }
 
@@ -324,6 +329,9 @@
         }
 
         /* Contact Section */
+        .contact {
+            background: #FFF8E1; /* Light warm off-white */
+        }
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -347,7 +355,7 @@
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: #4CAF50;
+            background: #E5A632; /* Primary Orange */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -370,7 +378,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #2E7D32;
+            color: #6D4C41; /* Dark Brown */
             font-weight: 600;
         }
 
@@ -387,12 +395,23 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #4CAF50;
+            border-color: #E5A632; /* Primary Orange */
         }
+
+        .contact-form .btn-primary {
+            background: #E5A632;
+            color: white;
+            box-shadow: 0 4px 15px rgba(229, 166, 50, 0.4);
+        }
+        .contact-form .btn-primary:hover {
+            background: #D49A2D;
+            box-shadow: 0 6px 20px rgba(229, 166, 50, 0.6);
+        }
+
 
         /* Footer */
         footer {
-            background: #2E2E2E;
+            background: #4A3F35; /* Darker brown for solid base */
             color: white;
             text-align: center;
             padding: 2rem 0;
@@ -418,7 +437,7 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
+                background: linear-gradient(135deg, #D49A2D 0%, #E5A632 100%);
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -693,7 +712,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 TEACH - Tanzania Eco Tech and Conservation Hub. Building a sustainable future together.</p>
+            <p>© 2025 TEACH - Tanzania Eco Tech and Conservation Hub. Building a sustainable future together.</p>
         </div>
     </footer>
 
@@ -745,9 +764,9 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(46, 125, 50, 0.95)';
+                header.style.background = 'rgba(212, 154, 45, 0.95)'; /* Darker orange with opacity */
             } else {
-                header.style.background = 'linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%)';
+                header.style.background = 'linear-gradient(135deg, #D49A2D 0%, #E5A632 100%)';
             }
         });
 
