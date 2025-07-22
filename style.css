@@ -4,11 +4,10 @@
     box-sizing: border-box;
 }
 
-/* Enhanced readability with darker base text color */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333; /* Darker text for better contrast */
+    color: #333;
     padding-top: 120px; 
 }
 
@@ -18,7 +17,6 @@ body {
     padding: 0 20px;
 }
 
-/* --- HEADER (Unchanged as requested) --- */
 header {
     background: transparent;
     padding: 1rem 0;
@@ -76,44 +74,51 @@ nav.container {
     font-size: 1.5rem;
     cursor: pointer;
 }
-/* --- END HEADER --- */
 
+/* --- ELEGANT HERO SECTION STYLES --- */
 
-/* Hero Section */
 .hero {
-    background: linear-gradient(rgba(229, 166, 50, 0.8), rgba(245, 183, 74, 0.8)), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect fill="%23E5A632" width="1000" height="600"/><circle fill="%23D49A2D" cx="200" cy="150" r="80"/><circle fill="%23F5B74A" cx="800" cy="200" r="60"/><circle fill="%23C8922A" cx="600" cy="400" r="100"/><polygon fill="%23AF7A24" points="100,500 200,300 300,500"/><polygon fill="%23C8922A" points="700,550 850,350 950,550"/></svg>');
+    background: linear-gradient(rgba(45, 52, 54, 0.8), rgba(45, 52, 54, 0.8)), 
+                url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
-    color: white;
+    color: #F1EBE4; /* Antique white for an elegant touch */
     margin-top: -120px;
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 15vw; /* Responsive font size based on viewport width */
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: #F1EBE4;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Enhanced readability */
     animation: fadeInUp 1s ease;
 }
 
 .hero-content .tagline {
-    font-size: 1.5rem;
+    font-size: 3vw; /* Responsive font size */
+    font-weight: 300;
+    letter-spacing: 2px;
     margin-bottom: 2rem;
-    opacity: 0.95;
+    opacity: 0.9;
+    color: #D4AF37; /* Soft gold for tagline */
+    text-transform: uppercase;
     animation: fadeInUp 1s ease 0.3s both;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     animation: fadeInUp 1s ease 0.6s both;
+    color: #F1EBE4;
 }
 
 .cta-buttons {
@@ -125,7 +130,7 @@ nav.container {
 }
 
 .btn {
-    padding: 15px 30px;
+    padding: 15px 35px;
     font-size: 1.1rem;
     border: none;
     border-radius: 50px;
@@ -137,28 +142,27 @@ nav.container {
     text-align: center;
 }
 
-/* Unified primary button style for high visibility */
 .btn-primary {
-    background: #E5A632;
-    color: white;
-    box-shadow: 0 4px 15px rgba(229, 166, 50, 0.4);
+    background: #D4AF37;
+    color: #2D3436;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .btn-primary:hover {
-    background: #D49A2D;
+    background: #C7A432;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(229, 166, 50, 0.6);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: #F1EBE4;
+    border: 2px solid #F1EBE4;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #D49A2D;
+    background: #F1EBE4;
+    color: #2D3436;
     transform: translateY(-3px);
 }
 
@@ -171,22 +175,21 @@ section {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #6D4C41; /* Warm dark brown for headings */
+    color: #6D4C41;
 }
 
 .section-subtitle {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 3rem;
-    color: #555; /* Darker grey for subtitles */
+    color: #555;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* About Section */
 .about {
-    background: #FFF8E1; /* Light warm off-white */
+    background: #FFF8E1;
 }
 
 .about-grid {
@@ -235,11 +238,10 @@ section {
 }
 
 .stat-label {
-    color: #555; /* Darker grey for readability */
+    color: #555;
     margin-top: 0.5rem;
 }
 
-/* Programs Section */
 .programs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -261,17 +263,16 @@ section {
     box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* Refined accent colors for a more cohesive palette */
 .program-card:nth-child(1) {
-    border-top-color: #E5A632; /* Primary Orange */
+    border-top-color: #E5A632;
 }
 
 .program-card:nth-child(2) {
-    border-top-color: #3A506B; /* Complementary Slate Blue */
+    border-top-color: #3A506B;
 }
 
 .program-card:nth-child(3) {
-    border-top-color: #6D4C41; /* Heading Brown for consistency */
+    border-top-color: #6D4C41;
 }
 
 .program-icon {
@@ -289,7 +290,6 @@ section {
     line-height: 1.6;
 }
 
-/* Impact Section */
 .impact {
     background: linear-gradient(135deg, #D49A2D 0%, #E5A632 100%);
     color: white;
@@ -329,10 +329,10 @@ section {
     font-size: 1.5rem;
 }
 
-/* Contact Section */
 .contact {
     background: #FFF8E1;
 }
+
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -392,7 +392,7 @@ section {
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-    color: #333; /* Ensure input text is dark */
+    color: #333;
 }
 
 .form-group input:focus,
@@ -401,15 +401,24 @@ section {
     border-color: #E5A632;
 }
 
-/* Footer */
+.contact-form .btn-primary {
+    background: #E5A632;
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 166, 50, 0.4);
+}
+
+.contact-form .btn-primary:hover {
+    background: #D49A2D;
+    box-shadow: 0 6px 20px rgba(229, 166, 50, 0.6);
+}
+
 footer {
-    background: #4A3F35; /* Dark brown for solid base */
+    background: #4A3F35;
     color: white;
     text-align: center;
     padding: 2rem 0;
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -421,7 +430,6 @@ footer {
     }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     body {
         padding-top: 100px;
@@ -445,49 +453,39 @@ footer {
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         border-radius: 20px;
     }
-
     .nav-links.active {
         display: flex;
     }
-
     .mobile-menu {
         display: block;
     }
-
     .logo-svg {
         width: 100px;
         height: 65px;
     }
-
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 20vw; /* Adjust for mobile */
     }
-
     .hero-content .tagline {
-        font-size: 1.2rem;
+        font-size: 5vw; /* Adjust for mobile */
     }
-
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-
     .btn {
         width: 100%;
         max-width: 300px;
     }
-
     .section-title {
         font-size: 2rem;
     }
-
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
