@@ -75,38 +75,45 @@ nav.container {
     cursor: pointer;
 }
 
-/* --- ELEGANT HERO SECTION STYLES --- */
+/* --- HERO SECTION WITH ENGINEERING ICON BACKGROUND --- */
 
 .hero {
-    background: linear-gradient(rgba(45, 52, 54, 0.8), rgba(45, 52, 54, 0.8)), 
-                url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+    /* 
+      The background is now multi-layered:
+      1. A dark, semi-transparent gradient on top to ensure text readability.
+      2. The custom SVG icon pattern underneath.
+    */
+    background: 
+        linear-gradient(rgba(45, 52, 54, 0.85), rgba(45, 52, 54, 0.85)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cdefs%3E%3Cstyle%3E.icon%7Bfill:rgba(241, 235, 228, 0.05);%7D%3C/style%3E%3C/defs%3E%3Crect width='400' height='400' fill='%232D3436'/%3E%3C!-- Gear 1 --%3E%3Cpath class='icon' d='M336.2,166.3l-18.4-10.6c-2.3-1.3-4.9-2.1-7.5-2.2l-4.8-21.3c-0.6-2.6-1.9-5-3.8-6.9l-13-13c-1.9-1.9-4.3-3.2-6.9-3.8l-21.3-4.8c-2.6-0.6-5.3-0.8-7.9-0.4l-21.1,5.7c-2.6,0.7-5,2.1-6.9,3.9l-10.6,10.6c-1.9,1.9-3.2,4.3-3.9,6.9l-5.7,21.1c-0.4,2.6-0.8,5.3-0.4,7.9l4.8,21.3c0.6,2.6,1.9,5,3.8,6.9l13,13c1.9,1.9,4.3,3.2,6.9,3.8l21.3,4.8c2.6,0.6,5.3,0.8,7.9,0.4l21.1-5.7c2.6-0.7,5-2.1,6.9-3.9l10.6-10.6c1.9-1.9,3.2-4.3,3.9-6.9l5.7-21.1C337,171.6,336.6,168.9,336.2,166.3z M287.8,200c0,19.3-15.6,34.9-34.9,34.9s-34.9-15.6-34.9-34.9s15.6-34.9,34.9-34.9S287.8,180.7,287.8,200z'/%3E%3C!-- Plus Sign --%3E%3Cpath class='icon' d='M50,150 h20 v-20 h20 v20 h20 v20 h-20 v20 h-20 v-20 h-20z'/%3E%3C!-- Circuit Lines --%3E%3Cpath class='icon' d='M150,50 h40 v-10 h10 v40 h-40 v10 h-10z'/%3E%3Cpath class='icon' d='M160,320 h-40 v10 h-10 v-40 h40 v-10 h10z'/%3E%3C!-- Circle --%3E%3Ccircle class='icon' cx='350' cy='350' r='20'/%3E%3C/svg%3E");
+    
+    background-color: #2D3436;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
-    color: #F1EBE4; /* Antique white for an elegant touch */
+    color: #F1EBE4;
     margin-top: -120px;
+    padding-top: 120px;
 }
 
 .hero-content h1 {
-    font-size: 15vw; /* Responsive font size based on viewport width */
+    font-size: 15vw;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 0.5rem;
     color: #F1EBE4;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Enhanced readability */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1s ease;
 }
 
 .hero-content .tagline {
-    font-size: 3vw; /* Responsive font size */
+    font-size: 3vw;
     font-weight: 300;
     letter-spacing: 2px;
     margin-bottom: 2rem;
     opacity: 0.9;
-    color: #D4AF37; /* Soft gold for tagline */
+    color: #D4AF37;
     text-transform: uppercase;
     animation: fadeInUp 1s ease 0.3s both;
 }
@@ -436,6 +443,7 @@ footer {
     }
     .hero {
         margin-top: -100px;
+        padding-top: 100px;
     }
     nav.container {
         padding: 0.5rem 1rem;
@@ -464,10 +472,10 @@ footer {
         height: 65px;
     }
     .hero-content h1 {
-        font-size: 20vw; /* Adjust for mobile */
+        font-size: 20vw;
     }
     .hero-content .tagline {
-        font-size: 5vw; /* Adjust for mobile */
+        font-size: 5vw;
     }
     .cta-buttons {
         flex-direction: column;
