@@ -503,3 +503,25 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+/* ADD THIS TO THE END OF style.css */
+
+.page-content {
+    padding-top: 150px; /* Adjust based on your header's height */
+    padding-bottom: 60px;
+    min-height: 70vh; /* Ensures the footer doesn't rise up on short pages */
+    background: #FFF8E1; /* Matches your 'about' section background */
+}
+
+.page-content h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #6D4C41;
+    margin-bottom: 2rem;
+}
+
+.page-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+}
