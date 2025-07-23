@@ -117,7 +117,7 @@ nav.container {
 
 /* Overlay inside each slide */
 .slide-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   padding: 2rem;
   max-width: 800px;
   text-align: center;
