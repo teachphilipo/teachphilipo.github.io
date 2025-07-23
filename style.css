@@ -525,3 +525,199 @@ html {
     max-width: 800px;
     margin: 0 auto 1.5rem auto;
 }
+/* --- BLOG POST STYLES --- */
+
+.blog-post {
+    background-color: #fff; /* A clean white background for the article */
+}
+
+/* Header and Hero Image */
+.blog-header {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh; /* Make the hero section tall */
+}
+
+.blog-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Black overlay for text readability */
+.blog-hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.blog-header .container {
+    position: relative;
+    z-index: 2;
+    margin-top: 80px; /* Push content down below fixed nav */
+}
+
+.blog-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    margin-bottom: 0.5rem;
+}
+
+.blog-meta {
+    font-size: 1rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Main Blog Content Styling */
+.blog-content {
+    max-width: 800px; /* Optimal reading width */
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+
+.blog-intro {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #555;
+    border-left: 4px solid #E5A632;
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.blog-section {
+    margin-bottom: 3rem;
+}
+
+.blog-section h2 {
+    font-size: 2rem;
+    color: #6D4C41;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+.blog-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Highlighting Statistics */
+.pull-quote {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #FFF8E1;
+    border-left: 5px solid #E5A632;
+    text-align: center;
+}
+
+.pull-quote p {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #6D4C41;
+    margin: 0;
+}
+
+/* Nicer list for sawdust reuse */
+.icon-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.icon-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.icon-list-item .icon {
+    font-size: 2.5rem;
+    background-color: #E5A632;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-list-item h3 {
+    font-size: 1.3rem;
+    color: #6D4C41;
+    margin-bottom: 0.25rem;
+}
+
+.icon-list-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Call to Action Box */
+.cta-section {
+    background: #6D4C41;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-top: 4rem;
+}
+
+.cta-section h2 {
+    color: white;
+    border-bottom: none;
+    font-size: 2.2rem;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+}
+
+.cta-section .btn {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .blog-title {
+        font-size: 2.5rem;
+    }
+    .blog-content {
+        margin-top: 3rem;
+    }
+    .pull-quote p {
+        font-size: 1.2rem;
+    }
+}
