@@ -19,18 +19,14 @@ body {
 
 /* --- HEADER STYLES (MODIFIED FOR SMALLER HEIGHT) --- */
 header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: transparent;
-}
-
-header.scrolled-up {
-  background-color: white; /* or your site’s background color */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    /* CHANGE: Reduced top/bottom padding to bring the nav pill closer to the top */
+    padding: 0.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 nav.container {
