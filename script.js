@@ -69,16 +69,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// --- Dynamic content loader ---
-function loadContent(page) {
-    fetch(page)
-        .then(res => res.text())
-        .then(data => {
-            const container = document.getElementById('dynamic-content');
-            if (container) {
-                container.innerHTML = data;
-                container.scrollIntoView({ behavior: 'smooth' });
-            }
-        })
-        .catch(err => console.error('Failed to load content:', err));
-}
+
