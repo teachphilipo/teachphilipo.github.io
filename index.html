@@ -8,56 +8,89 @@
     
     <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="style.css?v=1.2">
+    <style>
+        /* Slider Navigation Buttons */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+
+        .slider-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .slider-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .slider-nav button {
+                font-size: 1.5rem;
+                padding: 8px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Hero Section (and all other main content) -->
+    <!-- Hero Section with Navigation Buttons -->
+    <section id="home" class="hero-slider">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('asset/solarAndWind.jpeg');">
+                <div class="slide-overlay">
+                    <h1>TEACH<br>
+                    <span>Tanzania Eco-Tech And Conservation Hub</span></h1>
+                    <p>Catapult Training Approach</p>
+                    <div class="cta-buttons">
+                        <a href="#about" class="btn btn-primary">About us</a>
+                    </div>
+                </div>
+            </div>
 
-<section id="home" class="hero-slider">
-  <div class="slider">
-    <div class="slide active" style="background-image: url('asset/solarAndWind.jpeg');">
-      <div class="slide-overlay">
-        <h1>TEACH<br>
-        <span>Tanzania Eco-Tech And Conservation Hub</span></h1>
-        <p>Catapult Training Approach</p>
-        <div class="cta-buttons">
-          <a href="#about" class="btn btn-primary">About us</a>
-         <!-- <a href="#contact" class="btn btn-secondary">Join Our Mission</a>-->
-        </div>
-      </div>
-    </div>
+            <div class="slide" style="background-image: url('asset/disposableGoods.jpeg');">
+                <div class="slide-overlay">
+                    <h1>Empowering Tanzanian Communities</h1>
+                    <p>Through sustainable engineering practices and on the job technical training</p>
+                    <div class="cta-buttons">
+                        <a href="#programs" class="btn btn-primary">Our programs</a>
+                    </div>
+                </div>
+            </div>
 
-    <div class="slide" style="background-image: url('asset/disposableGoods.jpeg');">
-      <div class="slide-overlay">
-        <h1>Empowering Tanzanian Communities</h1>
-        <p>Through sustainable engnineering practices and on the job technical training</p>
-        <div class="cta-buttons">
-          <a href="#programs" class="btn btn-primary">Our programs</a>
-          <!--<a href="#volunteer" class="btn btn-scondary">Volunteer</a>-->
+            <div class="slide" style="background-image: url('asset/engine.png');">
+                <div class="slide-overlay">
+                    <h1>Innovative solutions for a Greener Future</h1>
+                    <p>We design solutions for enhanced people-nature long lasting relationship</p>
+                    <div class="cta-buttons">
+                        <a href="#impact" class="btn btn-primary">See Our Impact</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="slide" style="background-image: url('asset/engine.png');">
-      <div class="slide-overlay">
-        <h1>Innovative solutions for a Greener Future</h1>
-        <p>We design solutions for enhanced people-nature long lasting relationship</p>
-        <div class="cta-buttons">
-          <a href="#impact" class="btn btn-primary">See Our Impact</a>
+        
+        <!-- Navigation Arrows -->
+        <div class="slider-nav">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
         </div>
-      </div>
-    </div>
-  </div>
-    <div class="slider-nav">
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
-</section>
+    </section>
     
     <section id="about" class="about">
-        <!-- ... your existing about content ... -->
         <div class="container">
             <h2 class="section-title">About TEACH</h2>
             <p class="section-subtitle">We apply Catapult (manati) Approach to creating hand-on solutions that merge technology with sustainability ethos</p>
@@ -66,38 +99,17 @@
                 <div class="about-content">
                     <h3>Our Mission</h3>
                     <p>Facilitating sustainable use of natural resources by investing in environmentally friendly projects and acknowledging environmental justice.</p>
-                    
                     <p>The main goal of the organization is to see an improved livelihood of people through sustainable exploitation of the available productive resources.</p>
                 </div>
                 <div class="about-content">
                     <h3>Values</h3>
                     <p>TEACH believes in JEDI (justice, equity, diversity and inclusion), sustainability, transparency, and integrity as core values.</p>
-                    
                 </div>
-                <!--
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Communities Served</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">1000+</div>
-                        <div class="stat-label">Lives Impacted</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">25</div>
-                        <div class="stat-label">Eco Projects</div>
-                    </div>
-                </div>
-                -->
             </div>
         </div>
-       <!-- Navigation Arrows -->
-
     </section>
 
     <section id="programs" class="programs">
-        <!-- ... your existing programs content ... -->
         <div class="container">
             <h2 class="section-title">Our Programs</h2>
             <p class="section-subtitle">Innovative initiatives that combine technology and conservation for maximum impact</p>
@@ -124,42 +136,31 @@
         </div>
     </section>
 
-    <!-- Impact Section (Links Updated) -->
     <section id="impact" class="impact">
         <div class="container">
             <h2 class="section-title">Our Impact</h2>
-            <p class="section-subtitle">Making positive contribution in nature conservation, ecotourism, environmental justice, sustainable engineering, andcommunity empowerment.</p>
+            <p class="section-subtitle">Making positive contribution in nature conservation, ecotourism, environmental justice, sustainable engineering, and community empowerment.</p>
             <div class="impact-grid">
                 <div class="impact-item">
                     <div class="impact-icon">💧</div>
                     <h3>Circular Carriers Program</h3>
                     <p>Simple, memorable, and ties both the eco and human impact</p>
-                    <!-- UPDATED LINK 
-                    <a href="circular-carriers.html" class="read-more-btn">Read More</a>
-                     -->
                 </div>
                 <div class="impact-item">
                     <div class="impact-icon">⚡</div>
                     <h3>Sustainable Woodwork & Circular Craftsmanship</h3>
                     <p>Empowering communities through eco-friendly furniture making, creative reuse of sawdust, and hands-on woodcraft training—turning waste into value while promoting circular economy and sustainable livelihoods.</p>
-                    <!-- UPDATED LINK 
-                    <a href="renewables.html" class="read-more-btn">Read More</a>
-                    -->
                 </div>
                 
                 <div class="impact-item">
                     <div class="impact-icon">🎓</div>
                     <h3>Continuing professional development(CPD) program</h3>
-                    <p>Nature based Solutions (NbS) Programs, renewable energy; solar and wind energy,  </p>
-                    <!-- UPDATED LINK 
-                    <a href="education.html" class="read-more-btn">Read More</a>
-                    -->
+                    <p>Nature based Solutions (NbS) Programs, renewable energy; solar and wind energy</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get Involved</h2>
