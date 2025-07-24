@@ -1,6 +1,6 @@
+<script>
 document.addEventListener('DOMContentLoaded', function () {
-    
-    // Function to attach event listener for mobile menu
+    // --- Mobile Menu ---
     const initializeMobileMenu = () => {
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
@@ -11,24 +11,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // --- Function to load header and footer ---
+    // --- Load Header and Footer ---
     const loadHeaderFooter = async () => {
         const headerPlaceholder = document.getElementById('header-placeholder');
         const footerPlaceholder = document.getElementById('footer-placeholder');
 
         try {
-            // Fetch and load header
             if (headerPlaceholder) {
                 const headerResponse = await fetch('header.html');
                 if (headerResponse.ok) {
                     headerPlaceholder.innerHTML = await headerResponse.text();
-                    initializeMobileMenu(); // Initialize menu after header is loaded
+                    initializeMobileMenu();
                 } else {
                     throw new Error('Header not found');
                 }
             }
 
-            // Fetch and load footer
             if (footerPlaceholder) {
                 const footerResponse = await fetch('footer.html');
                 if (footerResponse.ok) {
@@ -42,19 +40,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // Load header/footer on page load
     loadHeaderFooter();
 
-    // --- Smooth scrolling for internal links (from your original file) ---
-    // Note: This needs to be delegated to the document to work with a dynamic header.
+    // --- Smooth Scroll ---
     document.addEventListener('click', function(e) {
         if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="index.html#"]')) {
             const navLinks = document.querySelector('.nav-links');
             const href = e.target.closest('a').getAttribute('href');
-            
-            // If on a different page, go to that page first. The hash will do the rest.
+
             if (!window.location.pathname.endsWith('index.html') && !window.location.pathname.endsWith('/')) {
-                 return; // Let the browser handle navigation to index.html
+                return;
             }
 
             const targetId = href.split('#')[1];
@@ -77,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- Contact form handler (from your original file) ---
+    // --- Contact Form ---
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -96,27 +91,55 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Hero slideshow logic (from your original file) ---
+    // --- Hero Slideshow with Buttons ---
     const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentSlideIndex = 0;
+    const slideIntervalTime = 5000;
+    let slideTimer;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(currentSlideIndex);
+    }
+
+    function prevSlide() {
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        showSlide(currentSlideIndex);
+    }
+
+    function startAutoSlide() {
+        slideTimer = setInterval(nextSlide, slideIntervalTime);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(slideTimer);
+    }
+
     if (slides.length > 0) {
-        let currentSlideIndex = 0;
-        const slideInterval = 5000;
+        showSlide(currentSlideIndex);
+        startAutoSlide();
+    }
 
-        function showNextSlide() {
-            if (slides[currentSlideIndex]) {
-                slides[currentSlideIndex].classList.remove('active');
-            }
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            if (slides[currentSlideIndex]) {
-                slides[currentSlideIndex].classList.add('active');
-            }
-        }
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
 
-        // Auto-activate first slide if needed
-        if (slides.length > 0) {
-            slides[0].classList.add('active');
-        }
-        
-        setInterval(showNextSlide, slideInterval);
+        nextBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
     }
 });
+</script>
