@@ -45,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load header/footer on page load
     loadHeaderFooter();
 
-    // --- Smooth scrolling for internal links (from your original file) ---
-    // Note: This needs to be delegated to the document to work with a dynamic header.
+    // --- Smooth scrolling for internal links ---
     document.addEventListener('click', function(e) {
         if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="index.html#"]')) {
             const navLinks = document.querySelector('.nav-links');
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- Contact form handler (from your original file) ---
+    // --- Contact form handler ---
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -96,27 +95,56 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Hero slideshow logic (from your original file) ---
+    // --- Hero Slideshow with Navigation Controls ---
     const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentSlideIndex = 0;
+    const slideIntervalTime = 5000;
+    let slideTimer;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(currentSlideIndex);
+    }
+
+    function prevSlide() {
+        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+        showSlide(currentSlideIndex);
+    }
+
+    function startAutoSlide() {
+        slideTimer = setInterval(nextSlide, slideIntervalTime);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(slideTimer);
+    }
+
+    // Initialize slideshow if slides exist
     if (slides.length > 0) {
-        let currentSlideIndex = 0;
-        const slideInterval = 5000;
+        showSlide(currentSlideIndex);
+        startAutoSlide();
+    }
 
-        function showNextSlide() {
-            if (slides[currentSlideIndex]) {
-                slides[currentSlideIndex].classList.remove('active');
-            }
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            if (slides[currentSlideIndex]) {
-                slides[currentSlideIndex].classList.add('active');
-            }
-        }
+    // Manual navigation button event listeners
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide(); // Restart auto-slide after manual interaction
+        });
 
-        // Auto-activate first slide if needed
-        if (slides.length > 0) {
-            slides[0].classList.add('active');
-        }
-        
-        setInterval(showNextSlide, slideInterval);
+        nextBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide(); // Restart auto-slide after manual interaction
+        });
     }
 });
