@@ -1,6 +1,6 @@
-<script>
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Mobile Menu ---
+    
+    // Function to attach event listener for mobile menu
     const initializeMobileMenu = () => {
         const mobileMenu = document.querySelector('.mobile-menu');
         const navLinks = document.querySelector('.nav-links');
@@ -11,22 +11,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // --- Load Header and Footer ---
+    // --- Function to load header and footer ---
     const loadHeaderFooter = async () => {
         const headerPlaceholder = document.getElementById('header-placeholder');
         const footerPlaceholder = document.getElementById('footer-placeholder');
 
         try {
+            // Fetch and load header
             if (headerPlaceholder) {
                 const headerResponse = await fetch('header.html');
                 if (headerResponse.ok) {
                     headerPlaceholder.innerHTML = await headerResponse.text();
-                    initializeMobileMenu();
+                    initializeMobileMenu(); // Initialize menu after header is loaded
                 } else {
                     throw new Error('Header not found');
                 }
             }
 
+            // Fetch and load footer
             if (footerPlaceholder) {
                 const footerResponse = await fetch('footer.html');
                 if (footerResponse.ok) {
@@ -40,16 +42,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // Load header/footer on page load
     loadHeaderFooter();
 
-    // --- Smooth Scroll ---
+    // --- Smooth scrolling for internal links (from your original file) ---
+    // Note: This needs to be delegated to the document to work with a dynamic header.
     document.addEventListener('click', function(e) {
         if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="index.html#"]')) {
             const navLinks = document.querySelector('.nav-links');
             const href = e.target.closest('a').getAttribute('href');
-
+            
+            // If on a different page, go to that page first. The hash will do the rest.
             if (!window.location.pathname.endsWith('index.html') && !window.location.pathname.endsWith('/')) {
-                return;
+                 return; // Let the browser handle navigation to index.html
             }
 
             const targetId = href.split('#')[1];
@@ -72,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- Contact Form ---
+    // --- Contact form handler (from your original file) ---
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -91,55 +96,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Hero Slideshow with Buttons ---
+    // --- Hero slideshow logic (from your original file) ---
     const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let currentSlideIndex = 0;
-    const slideIntervalTime = 5000;
-    let slideTimer;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-    }
-
-    function nextSlide() {
-        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-        showSlide(currentSlideIndex);
-    }
-
-    function prevSlide() {
-        currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-        showSlide(currentSlideIndex);
-    }
-
-    function startAutoSlide() {
-        slideTimer = setInterval(nextSlide, slideIntervalTime);
-    }
-
-    function stopAutoSlide() {
-        clearInterval(slideTimer);
-    }
-
     if (slides.length > 0) {
-        showSlide(currentSlideIndex);
-        startAutoSlide();
-    }
+        let currentSlideIndex = 0;
+        const slideInterval = 5000;
 
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            stopAutoSlide();
-            prevSlide();
-            startAutoSlide();
-        });
+        function showNextSlide() {
+            if (slides[currentSlideIndex]) {
+                slides[currentSlideIndex].classList.remove('active');
+            }
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            if (slides[currentSlideIndex]) {
+                slides[currentSlideIndex].classList.add('active');
+            }
+        }
 
-        nextBtn.addEventListener('click', () => {
-            stopAutoSlide();
-            nextSlide();
-            startAutoSlide();
-        });
+        // Auto-activate first slide if needed
+        if (slides.length > 0) {
+            slides[0].classList.add('active');
+        }
+        
+        setInterval(showNextSlide, slideInterval);
     }
 });
-</script>
