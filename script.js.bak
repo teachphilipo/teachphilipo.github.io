@@ -1,0 +1,109 @@
+document.addEventListener('DOMContentLoaded', function () {
+    
+    // --- MODIFIED: Function to attach event listener for mobile menu ---
+    const initializeMobileMenu = () => {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', function () {
+                // Toggle active class on the menu icon for the 'X' animation
+                this.classList.toggle('active');
+                // Toggle active class on the nav links to show/hide them
+                navLinks.classList.toggle('active');
+            });
+        }
+    };
+
+    // --- Function to load header and footer ---
+    const loadHeaderFooter = async () => {
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+
+        try {
+            // Fetch and load header
+            if (headerPlaceholder) {
+                const headerResponse = await fetch('header.html');
+                if (headerResponse.ok) {
+                    headerPlaceholder.innerHTML = await headerResponse.text();
+                    initializeMobileMenu(); // Initialize menu after header is loaded
+                } else {
+                    throw new Error('Header not found');
+                }
+            }
+
+            // Fetch and load footer
+            if (footerPlaceholder) {
+                const footerResponse = await fetch('footer.html');
+                if (footerResponse.ok) {
+                    footerPlaceholder.innerHTML = await footerResponse.text();
+                } else {
+                    throw new Error('Footer not found');
+                }
+            }
+        } catch (error) {
+            console.error('Error loading header or footer:', error);
+        }
+    };
+
+    // Load header/footer on page load
+    loadHeaderFooter();
+
+    // --- MODIFIED: Smooth scrolling for internal links ---
+    document.addEventListener('click', function(e) {
+        // Find the closest anchor tag to the click event
+        const anchor = e.target.closest('a');
+        if (anchor && (anchor.href.includes('#') || anchor.getAttribute('href').startsWith('#'))) {
+            
+            const navLinks = document.querySelector('.nav-links');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const href = anchor.getAttribute('href');
+            
+            // If on a different page, let the browser handle navigation
+            const targetUrl = new URL(href, window.location.href);
+            if (targetUrl.pathname !== window.location.pathname) {
+                 return;
+            }
+
+            const targetId = href.split('#')[1];
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                e.preventDefault();
+                const headerOffset = 80;
+                const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if it's open
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    if (mobileMenu) {
+                        mobileMenu.classList.remove('active'); // Revert icon to hamburger
+                    }
+                }
+            }
+        }
+    });
+
+    // --- Contact form handler ---
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            if (name && email && message) {
+                alert(`Thank you, ${name}! Your message has been received.`);
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    }
+});

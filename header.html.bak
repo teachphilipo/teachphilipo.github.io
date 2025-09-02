@@ -1,0 +1,36 @@
+<!-- header.html -->
+<header>
+    <nav class="container">
+<a href="index.html#home">
+  <div class="logo">
+    <svg class="logo-svg" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- Orange oval background -->
+      <ellipse cx="100" cy="60" rx="90" ry="50" fill="#E5A632"/>
+
+      <!-- Outer diamond shape -->
+      <path d="M50 60 L100 35 L150 60 L100 85 Z" fill="none" stroke="#2d3436" stroke-width="2"/>
+      
+      <!-- Inner diamond shape -->
+      <path d="M55 60 L100 40 L145 60 L100 80 Z" fill="none" stroke="#2d3436" stroke-width="1.5"/>
+      
+      <!-- TEACH text inside diamond -->
+      <text x="100" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="italic" fill="#2d3436">TEACH</text>
+      
+      <!-- Subtitle text -->
+      <text x="100" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#2d3436">TANZANIA ECO-TECH</text>
+      <text x="100" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#2d3436">AND CONSERVATION HUB</text>
+    </svg>
+  </div>
+</a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="programs.html">Our Programs</a></li>
+			<li><a href="impact.html">Our Impact</a></li>
+            <li><a href="index.html#news">Updates</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">☰</div>
+    </nav>
+</header>

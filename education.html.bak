@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education & Training - TEACH</title>
+    <meta name="description" content="Learn about our Nature-based Solutions (NbS) Training Programs.">
+    <link rel="stylesheet" href="style.css?v=2.0"> 
+</head>
+<body>
+
+    <main class="article-page">
+        <h1>Planting Knowledge: Growing Resilient Communities</h1>
+        <p class="meta">By TEACH Staff | Published on July 23, 2025</p>
+
+        <p>At TEACH, we believe the most powerful tool for sustainable change is knowledge. Our Education & Training Program is dedicated to empowering Tanzanian communities with practical, Nature-based Solutions (NbS).</p>
+        
+        <h2>Our Hands-On Curriculum</h2>
+        <p>We move beyond theory to focus on tangible skills that can be implemented immediately. Key training areas include:</p>
+        <ul>
+            <li><strong>Small-Space Gardens:</strong> Designing and implementing vertical and container gardens perfect for urban and peri-urban homes to improve food security.</li>
+            <li><strong>Solar-Powered Irrigation:</strong> Using solar water pumps and efficient drip irrigation systems to conserve water, reduce costs, and boost crop productivity.</li>
+            <li><strong>Biochar & Soil Health:</strong> Creating and applying biochar from agricultural waste to enrich soil, improve water retention, and sequester carbon.</li>
+            <li><strong>Agroecology & Agroforestry:</strong> Promoting farming techniques that work in harmony with nature to enhance biodiversity and ensure long-term farm resilience.</li>
+        </ul>
+
+        <h2>Meeting Communities Where They Are</h2>
+        <p>Knowledge-sharing is most effective when it is accessible. We engage directly with farmers, youth groups, and local leaders through a multi-faceted approach.</p>
+        
+        <a href="index.html" class="home-link">&larr; Back to Home</a>
+    </main>
+
+</body>
+</html>
