@@ -11,9 +11,9 @@
 
     <div id="header-placeholder"></div>
 
+    <!-- The overall structure remains an article -->
     <article class="blog-post">
         <header class="blog-header">
-            <!-- Using a more general image for sustainable tech -->
             <div class="blog-hero-image" style="background-image: url('asset/solarAndWind.jpeg');"></div>
             <div class="container">
                 <h1 class="blog-title">Renewable Solutions for a Resilient Future</h1>
@@ -28,42 +28,45 @@
                 At TEACH, we believe in applying practical and sustainable technologies to solve local challenges. Our programs are blueprints for a circular economy, designed to create lasting environmental and economic resilience from the ground up.
             </p>
 
-            <div class="blog-section">
-                <h2>💧 Harnessing the Sun: Solar Pump Installations</h2>
-                <p>Access to water is fundamental for agriculture and community well-being. Our solar-powered irrigation initiatives replace costly and polluting diesel pumps with clean, renewable energy. By installing solar water pumps and implementing efficient drip irrigation, we help local farmers conserve water, reduce operational costs, and significantly boost their crop productivity, ensuring greater food security.</p>
-                <img src="asset/solarAndWind.jpeg" alt="A solar-powered irrigation system in a field in Tanzania" class="blog-image">
-            </div>
-            
-            <div class="blog-section">
-                <h2>♻️ From Waste to Wealth: Biochar Production</h2>
-                <p>Our commitment to circularity shines in how we handle agricultural byproducts. Organic waste like sawdust, which is often discarded, becomes a valuable resource. Through a simple process, we convert this waste into <strong>biochar</strong>—a powerful soil amendment.</p>
-                
-                <!-- The new image is added here -->
-                <img src="asset/biochar.jpeg" alt="the creation of biochar from agricultural waste." class="blog-image" style="margin-bottom: 2rem;">
+            <!-- 
+              MODIFICATION: 
+              The linear 'blog-section' divs have been replaced with the responsive 'news-grid'
+              which will automatically handle layout across all device sizes.
+            -->
+            <div class="news-grid" style="margin-top: 3rem;">
 
-                 <div class="icon-list">
-                    <div class="icon-list-item">
-                        <div class="icon">🌱</div>
-                        <div>
-                            <h3>Enriches Soil & Boosts Yields</h3>
-                            <p>When added to soil, biochar improves water retention, enhances nutrient availability, and increases crop yields for local farmers.</p>
-                        </div>
-                    </div>
-                    <div class="icon-list-item">
-                        <div class="icon">🌍</div>
-                        <div>
-                            <h3>Sequestering Carbon</h3>
-                            <p>This process locks carbon into a stable form, effectively removing it from the atmosphere and contributing to the fight against climate change.</p>
-                        </div>
+                <!-- Card 1: Solar Pump Installations -->
+                <div class="news-card">
+                    <img src="asset/solarAndWind.jpeg" alt="A solar-powered irrigation system in a field in Tanzania">
+                    <div class="card-content">
+                        <span class="card-category">Technology</span>
+                        <h3>💧 Solar Pump Installations</h3>
+                        <p>Our solar-powered irrigation initiatives replace costly diesel pumps with clean energy, helping farmers conserve water, reduce costs, and boost crop productivity for greater food security.</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="blog-section">
-                <h2>🛍️ Closing the Loop: Biodegradable Bags</h2>
-                <p>In response to the national ban on plastic bags, our <strong>Circular Carriers Program</strong> offers a sustainable alternative rooted in local resources. This grassroots initiative turns discarded brown paper and a biodegradable glue from wheat flour into eco-friendly storage bags. This not only reduces waste but also provides a stable income and skill development for the 20 local women who produce and sell the bags, creating a vibrant, community-driven circular economy.</p>
-                <img src="asset/disposableGoods.jpeg" alt="Women in the Circular Carriers Program creating biodegradable bags" class="blog-image">
+                <!-- Card 2: Biochar Production -->
+                <div class="news-card">
+                    <img src="asset/engine.png" alt="A training session on the creation of biochar.">
+                    <div class="card-content">
+                        <span class="card-category">Circular Economy</span>
+                        <h3>♻️ Biochar Production</h3>
+                        <p>We convert agricultural waste like sawdust into biochar, a powerful soil amendment that enriches soil, improves water retention, and sequesters carbon to fight climate change.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Biodegradable Bags -->
+                <div class="news-card">
+                    <img src="asset/disposableGoods.jpeg" alt="Women in the Circular Carriers Program creating biodegradable bags">
+                    <div class="card-content">
+                        <span class="card-category">Community Empowerment</span>
+                        <h3>🛍️ Biodegradable Bags</h3>
+                        <p>Our Circular Carriers Program provides a sustainable alternative to plastic, turning waste paper into eco-friendly bags and creating stable incomes for local women.</p>
+                    </div>
+                </div>
+
             </div>
+            <!-- End of the news-grid -->
 
             <section class="cta-section">
                 <h2>Join Our Mission</h2>
@@ -76,5 +79,4 @@
     <div id="footer-placeholder"></div>
     <script src="script.js" defer></script>
 </body>
-
 </html>
