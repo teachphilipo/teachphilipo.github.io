@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // --- Contact form handler ---
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
+    // --- const contactForm = document.getElementById('contactForm');
+    /*if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
             const formData = new FormData(this);
@@ -107,5 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Please fill in all fields.');
             }
         });
-    }
+    }*/
+
 });
