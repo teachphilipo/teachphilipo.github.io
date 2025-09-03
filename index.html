@@ -100,24 +100,37 @@
                     </div>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+<div class="contact-form">
+    <h3>Send us a Message</h3>
+    
+    <!-- MODIFICATIONS START HERE -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- This hidden input is required, and you MUST replace the value -->
+        <input type="hidden" name="access_key" value="PASTE_YOUR_ACCESS_KEY_HERE">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <!-- The 'name' attribute is important, keep it as is -->
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        
+        <!-- Optional: Add this line to prevent bot spam -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+
+    </form>
+    <!-- MODIFICATIONS END HERE -->
+</div>
             </div>
         </div>
     </section>
@@ -128,4 +141,5 @@
     <!-- Link to the external JavaScript file -->
     <script src="script.js" defer></script>
 </body>
+
 </html>
