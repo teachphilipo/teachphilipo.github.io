@@ -17,8 +17,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--color-text); /* UPDATED */
-    background-color: var(--color-background); /* UPDATED */
+    color: var(--color-text);
+    background-color: var(--color-background);
     padding-top: 100px; 
 }
 
@@ -40,13 +40,12 @@ header {
 }
 
 nav.container {
-    /* UPDATED GRADIENT to use new primary color */
     background: linear-gradient(60deg, #d89b1f 0%, var(--color-primary) 100%);
     display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 0.25rem 2rem;
-    border-radius: 10px;
+    border-radius: 30px; 
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
@@ -56,7 +55,7 @@ nav.container {
 .nav-links { display: flex; list-style: none; gap: 1.5rem; }
 
 .nav-links a {
-    color: var(--color-white); /* UPDATED */
+    color: var(--color-white);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -87,16 +86,15 @@ nav.container {
 }
 
 .btn-primary {
-  background-color: var(--color-primary); /* UPDATED */
-  color: var(--color-text); /* UPDATED for better contrast */
+  background-color: var(--color-primary);
+  color: var(--color-text);
 }
 .btn-primary:hover {
   background-color: #d89b1f; /* Darker gold */
 }
 
-/* NEW ACCENT BUTTON STYLE */
 .btn-accent {
-  background-color: var(--color-accent); /* Conservation Teal */
+  background-color: var(--color-accent);
   color: var(--color-white);
 }
 .btn-accent:hover {
@@ -110,20 +108,20 @@ section { padding: 0.1rem 0; }
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--color-secondary); /* UPDATED */
+    color: var(--color-secondary);
 }
 .section-subtitle {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 3rem;
-    color: var(--color-text); /* UPDATED */
+    color: var(--color-text);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .contact {
-    background: var(--color-white); /* UPDATED for a cleaner look */
+    background: var(--color-white);
     padding: 4rem 0;
 }
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem; }
@@ -133,7 +131,7 @@ section { padding: 0.1rem 0; }
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: var(--color-primary); /* UPDATED */
+    background: var(--color-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -148,7 +146,7 @@ section { padding: 0.1rem 0; }
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--color-secondary); /* UPDATED */
+    color: var(--color-secondary);
     font-weight: 600;
 }
 
@@ -160,12 +158,12 @@ section { padding: 0.1rem 0; }
     border-radius: 8px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
-    color: var(--color-text); /* UPDATED */
+    color: var(--color-text);
 }
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--color-primary); /* UPDATED */
+    border-color: var(--color-primary);
 }
 
 .contact-form .btn-primary { box-shadow: 0 4px 15px rgba(230, 161, 34, 0.4); }
@@ -173,14 +171,14 @@ section { padding: 0.1rem 0; }
 
 /* --- FOOTER --- */
 footer {
-    background: #4A3F35; /* Kept dark for strong visual anchor */
+    background: #4A3F35;
     color: var(--color-white);
     text-align: center;
     padding: 2rem 0;
 }
 
 /* --- PAGE & BLOG STYLES --- */
-.page-content { padding-top: 150px; padding-bottom: 60px; min-height: 70vh; background: var(--color-white); /* UPDATED */ }
+.page-content { padding-top: 150px; padding-bottom: 60px; min-height: 60vh; background: var(--color-white); }
 .page-content h1 { text-align: center; font-size: 2.8rem; color: var(--color-secondary); margin-bottom: 2rem; }
 .page-content p { font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto 1.5rem auto; }
 
@@ -196,8 +194,8 @@ footer {
 .blog-intro {
     font-size: 1.3rem;
     line-height: 1.7;
-    color: var(--color-text); /* UPDATED */
-    border-left: 4px solid var(--color-primary); /* UPDATED */
+    color: var(--color-text);
+    border-left: 4px solid var(--color-primary);
     padding-left: 1.5rem;
     margin-bottom: 3rem;
 }
@@ -219,14 +217,27 @@ footer {
 .cta-section .btn { transform: scale(1.1); }
 
 /* --- HERO & NEWS CARD STYLES --- */
-.hero-featured { position: relative; height: 80vh; display: flex; align-items: center; justify-content: center; color: var(--color-white); text-align: center; }
+.hero-featured { 
+    position: relative; 
+    height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: var(--color-white); 
+    text-align: center;
+    /* --- MODIFICATIONS HERE --- */
+    max-width: 1200px;             /* 1. Constrain the width */
+    margin: 2rem auto 0;           /* 2. Add top margin and center horizontally */
+    border-radius: 30px;           /* 3. Match the header's roundness */
+    overflow: hidden;              /* 4. Ensure image respects the rounded corners */
+}
 .featured-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; }
 .featured-overlay { position: relative; z-index: 2; background: rgba(0, 0, 0, 0.6); padding: 3rem; max-width: 900px; border-radius: 10px; }
 
 .featured-tag {
     display: inline-block;
-    background: var(--color-primary); /* UPDATED */
-    color: var(--color-text); /* UPDATED for contrast */
+    background: var(--color-primary);
+    color: var(--color-text);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-weight: bold;
@@ -247,7 +258,7 @@ footer {
 .card-category {
     font-size: 0.8rem;
     font-weight: bold;
-    color: var(--color-primary); /* UPDATED */
+    color: var(--color-primary);
     text-transform: uppercase;
     margin-bottom: 0.75rem;
 }
@@ -255,7 +266,7 @@ footer {
 .card-content p { font-size: 1rem; line-height: 1.6; color: var(--color-text); flex-grow: 1; margin-bottom: 1.5rem; }
 
 .read-more {
-    color: var(--color-secondary); /* UPDATED */
+    color: var(--color-secondary);
     text-decoration: none;
     font-weight: bold;
     align-self: flex-start; 
@@ -264,6 +275,14 @@ footer {
 
 /* --- RESPONSIVE STYLES --- */
 html { scroll-behavior: smooth; }
+
+/* --- MODIFICATION HERE: Add rule to mimic container padding on hero --- */
+@media (max-width: 1240px) {
+    .hero-featured {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
 
 @media (max-width: 768px) {
     nav.container { padding: 0.25rem 1.5rem; }
@@ -279,9 +298,12 @@ html { scroll-behavior: smooth; }
     .blog-content { margin-top: 3rem; }
     .pull-quote p { font-size: 1.2rem; }
     .featured-content h1 { font-size: 2.2rem; }
+    /* --- MODIFICATION HERE: Adjust hero height on mobile --- */
+    .hero-featured {
+        height: 70vh;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1100px) {
     .news-grid { grid-template-columns: 1fr 1fr; }
 }
-
