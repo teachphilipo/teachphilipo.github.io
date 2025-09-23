@@ -30,7 +30,8 @@ body {
 
 /* --- HEADER STYLES --- */
 header {
-    background: transparent;
+   background: linear-gradient(60deg, #007d2b 0%, var(--color-primary) 100%);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     padding: 0.5rem 0;
     position: fixed;
     width: 100%;
@@ -305,4 +306,5 @@ html { scroll-behavior: smooth; }
 @media (min-width: 769px) and (max-width: 1100px) {
     .news-grid { grid-template-columns: 1fr 1fr; }
 }
+
 
