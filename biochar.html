@@ -1,51 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Biochar Revolution: From Waste to Black Gold for Farmers</title>
-<meta name="description" content="Discover how biochar is transforming agriculture, boosting crop yields, and fighting climate change.">
 <link rel="stylesheet" href="style.css?v=1.3">
 <style>
-body {
-font-family: 'Georgia', serif;
-line-height: 1.6;
-color: #333;
-}
-.container {
-max-width: 800px;
-margin: 0 auto;
-padding: 2rem;
-}
-h1, h2 {
-font-family: 'Helvetica Neue', sans-serif;
-font-weight: bold;
-}
-.intro-text {
-font-style: italic;
-color: #555;
-font-size: 1.1rem;
-}
-.author-info {
-display: flex;
-align-items: center;
-margin-bottom: 2rem;
-}
-.author-info img {
-border-radius: 50%;
-margin-right: 1rem;
-width: 50px;
-height: 50px;
-}
-.author-info span {
-font-weight: bold;
-}
-.main-image {
-width: 100%;
-height: auto;
-margin-bottom: 2rem;
-border-radius: 8px;
-}
+    /* Modern Blog Styling */
+    :root {
+        --primary-color: #27ae60; /* Earthy Green */
+        --text-color: #343a40;
+        --heading-color: #2c3e50;
+        --background-light: #f8f9fa;
+        --white: #ffffff;
+        --border-color: #e9ecef;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.7;
+        color: var(--text-color);
+        background-color: var(--background-light);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem 3rem;
+        background-color: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    h1, h2 {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--heading-color);
+        line-height: 1.3;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--primary-color);
+    }
+
+    .intro-text {
+        font-style: normal;
+        font-size: 1.15rem;
+        color: #555;
+        background-color: #f8f9fa;
+        padding: 1.5rem;
+        border-left: 5px solid var(--primary-color);
+        border-radius: 0 8px 8px 0;
+        margin: 2rem 0;
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    .author-info img {
+        border-radius: 50%;
+        margin-right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+
+    .author-info span {
+        font-weight: 600;
+    }
+    
+    .main-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    p {
+        margin-bottom: 1.25rem;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    ul li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.75rem;
+    }
+
+    ul li::before {
+        content: '✔';
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
 </style>
 </head>
 <body>
@@ -55,33 +117,33 @@ Code
     <div class="container">
         <h1>The Biochar Revolution: From Waste to Black Gold for Farmers</h1>
         <div class="author-info">
-            <img src="https://via.placeholder.com/50" alt="Author Photo">
-            <span>By Jane Doe | Published on September 29, 2025</span>
+            <img src="https://via.placeholder.com/50/27ae60/ffffff?text=JD" alt="Author Jane Doe">
+            <span>By Jane Doe | Published: September 29, 2025</span>
         </div>
-        <img src="https://via.placeholder.com/800x400" alt="Biochar in soil" class="main-image">
+        <img src="https://via.placeholder.com/800x400" alt="A close-up of rich, dark soil amended with biochar" class="main-image">
 
-        <p class="intro-text">In the quest for a more sustainable and resilient agricultural future, an ancient practice is making a powerful comeback. Biochar, a charcoal-like substance, is proving to be a game-changer for farmers worldwide. By turning agricultural waste into a potent soil amendment, biochar is not only boosting crop yields but also playing a crucial role in the fight against climate change.</p>
+        <p class="intro-text">In the quest for a more sustainable and resilient agricultural future, an ancient practice is making a powerful comeback. Biochar is proving to be a game-changer for farmers worldwide, turning agricultural waste into a potent soil amendment that boosts crop yields and plays a crucial role in the fight against climate change.</p>
 
         <h2>🌍 What Exactly is Biochar?</h2>
-        <p>Biochar is created by heating organic materials like wood chips, crop residues, and manure in a low-oxygen environment, a process called pyrolysis. This transforms the biomass into a stable, carbon-rich material that can be added to the soil. Unlike regular charcoal used for fuel, biochar is specifically produced to improve soil health and sequester carbon. This process essentially locks up carbon that would otherwise be released into the atmosphere, making it a carbon-negative technology.</p>
+        <p>Biochar is created by heating organic materials like wood chips, crop residues, and manure in a low-oxygen environment—a process called pyrolysis. This transforms the biomass into a stable, carbon-rich material. Unlike regular charcoal used for fuel, biochar is specifically produced to improve soil health and sequester carbon. This process essentially locks up carbon that would otherwise be released into the atmosphere, making it a carbon-negative technology.</p>
 
         <h2>🌱 Supercharging the Soil for a Bountiful Harvest</h2>
-        <p>The magic of biochar lies in its porous structure. This structure acts like a sponge, significantly improving the soil's ability to retain water and essential nutrients. This is a massive advantage for farmers, especially in regions prone to drought. Healthier soil structure also means better aeration for plant roots to thrive.</p>
+        <p>The magic of biochar lies in its incredibly porous structure, which acts like a sponge, significantly improving the soil's ability to retain water and essential nutrients. This is a massive advantage for farmers, especially in regions prone to drought. Healthier soil structure also means better aeration for plant roots to thrive.</p>
         <p>Furthermore, biochar can help balance soil pH, making nutrients more accessible to plants. It also provides a fantastic habitat for beneficial microorganisms that are vital for a healthy soil ecosystem. The result? Stronger, healthier plants and, ultimately, more abundant harvests.</p>
 
-        <h2>👩‍🌾 A Farmer's Best Friend: Boosting Livelihoods and Resilience</h2>
+        <h2>👩‍🌾 A Farmer's Best Friend: Boosting Livelihoods</h2>
         <p>For farmers, the benefits of biochar translate directly to their bottom line. Increased crop yields mean more income and greater food security. By improving soil health, biochar reduces the need for expensive chemical fertilizers, leading to significant cost savings. Its water-retention properties can also lessen the reliance on irrigation, a critical factor in water-scarce areas.</p>
         <p>By adopting biochar, farmers can build more resilient agricultural systems that are better equipped to handle the challenges of a changing climate, such as droughts and heavy rainfall.</p>
 
         <h2>🔄 A Win for the Planet: The Circular Economy in Action</h2>
         <p>The production and use of biochar perfectly embody the principles of a circular economy by transforming waste into a valuable resource. This sustainable practice offers a multitude of environmental benefits:</p>
         <ul>
-            <li><strong>Climate Change Mitigation:</strong> By sequestering carbon in the soil for hundreds or even thousands of years, biochar actively removes CO2 from the atmosphere. It can also reduce emissions of other potent greenhouse gases like nitrous oxide from fertilizers.</li>
+            <li><strong>Climate Change Mitigation:</strong> By sequestering carbon in the soil for hundreds of years, biochar actively removes CO2 from the atmosphere and can reduce emissions of other potent greenhouse gases.</li>
             <li><strong>Waste Reduction:</strong> Agricultural and forestry waste that might otherwise be burned or left to decompose is converted into a valuable product.</li>
             <li><strong>Reduced Pollution:</strong> By retaining nutrients, biochar helps prevent fertilizer runoff into waterways, protecting our aquatic ecosystems.</li>
         </ul>
 
-        <p>Biochar represents a powerful, accessible, and sustainable solution for some of the most pressing challenges facing modern agriculture. By enriching our soils and sequestering carbon, this "black gold" is paving the way for a healthier planet and more prosperous lives for farmers everywhere.</p>
+        <p>Biochar represents a powerful, accessible, and sustainable solution for the most pressing challenges facing modern agriculture. By enriching our soils and sequestering carbon, this "black gold" is paving the way for a healthier planet and more prosperous lives for farmers everywhere.</p>
     </div>
 </main>
 </body>
